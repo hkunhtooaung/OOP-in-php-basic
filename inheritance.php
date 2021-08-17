@@ -39,47 +39,69 @@ $drink->getName('3000');
 echo $drink->getPrice();
 
 //------------------//
+// class Animal
+// {
+// 	public function __construct(protected $name) 
+// 	{
+		
+// 	}
+// }
+// class Dog extends Animal 
+// {
+// 	public function bark()
+// 	{
+// 		echo "$this->name :: woof.. woof..";
+// 	}
+// }
+// echo "<br>";
+// $dog = new Dog('Bobby');
+// $dog->bark();
+//------------------//
+
 class Animal
 {
-	public function __construct(protected $name) 
+	public function __construct(protected $name)
 	{
-		
+
 	}
 }
-class Dog extends Animal 
+class Dog extends Animal
 {
-	public function bark()
+	public function __construct($name, private $color)
 	{
-		echo "$this->name :: woof.. woof..";
+		parent::__construct($name);
+	}
+	public function profile()
+	{
+		echo "The color of $this->name is $this->color";
 	}
 }
 echo "<br>";
-$dog = new Dog('Bobby');
-$dog->bark();
-//------------------//
+$bobby = new Dog('Bobby', 'white');
+$bobby->profile();
+// so if we dont want to override the constructor in the inherientence we use final
+class Animal
+{
+	final public function run()
+	{
+		echo "Animal are running";
+	}
+}
+class Dog extends Animal
+{
+	public function run()
+	{
+		echo "the dog is running";
+	}
+}
 
-// class Animal
-// {
-// 	protected $name;
-// 	//final mean u cannot overriede this __construct function
-// 	final public function __construct($name) {
-// 		$this->name = $name;
-// 	}
+//ERROR CANNOT OVERRIDE FINAL METHOD
 
-// }
+final class Animal {
+	//
+}
 
-// class Dog extends Animal
-// {
-// 	private $color;
-
-// 	public function __construct($name,$color) {
-// 		parent::__construct($name);
-// 		$this->color = $color;
-// 	}
-// 	public function profile() {
-// 		echo "$this->name has $this->color color.";
-// 	}
-// }
-
-// $bobby = new Dog("Bobby", "Brown");
-// $bobby->profile();
+class Dog extends Animal {
+	//
+}
+//ERROR mAY NOT INGEIT FROM FINAL CLASS

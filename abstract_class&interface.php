@@ -37,27 +37,27 @@
 
 // app(new Dog);
 // app(new fish);
+//----------------------------------------------
+// interface Animal
+// {
+// 	public function move();
+// }
 
-interface Animal
-{
-	public function move();
-}
+// class Dog implements Animal
+// {
+// 	public function move() {
+// 		echo "The dog is moving..";
+// 	}
+// }
+// class Fish implements Animal
+// {
+// 	public function move() {
+// 		echo "The fish is swimming...";
+// 	}
+// }
 
-class Dog implements Animal
-{
-	public function move() {
-		echo "The dog is moving..";
-	}
-}
-class Fish implements Animal
-{
-	public function move() {
-		echo "The fish is swimming...";
-	}
-}
-
-function app(Animal $obj) {
-	$obj->move();
-}
-app(new Dog);
-app(new Fish);
+// function app(Animal $obj) {
+// 	$obj->move();
+// }
+// app(new Dog);
+// app(new Fish);
